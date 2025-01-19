@@ -147,3 +147,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ignore generated project data
+public_companies/data/*
+!public_companies/data/.gitignore
+
