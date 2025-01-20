@@ -150,5 +150,6 @@ cython_debug/
 
 # Ignore generated project data
 public_companies/data/*
-!public_companies/data/.gitignore
+!public_companies/data/
+
 
