@@ -2,7 +2,6 @@ __author__ = 'Orit Kozolin'
 
 import requests
 from config import TASE_API_KEY
-from public_companies.helpers.file_handler import store_json_data, dict_to_file
 
 
 class TASE(object):
@@ -33,11 +32,3 @@ class TASE(object):
             tase_companies_dict['taseCompanies'].append(company_info)
         # print(tase_companies_dict)
         return tase_companies_dict
-
-if __name__ == '__main__':
-    tase_api = TASE()
-    tase_companies_dict = tase_api.companies_list()
-    output_path = "data/companies_api_output"
-
-    store_json_data(tase_companies_dict,f"{output_path}/api_output.json")
-    dict_to_file(tase_companies_dict, f"{output_path}/api_output.py")
