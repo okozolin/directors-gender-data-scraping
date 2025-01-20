@@ -2,7 +2,7 @@ import os
 
 from config import COMPANIES_OUTPUT_PATH, JSON_OUTPUT_FILE, PY_OUTPUT_FILE
 from public_companies.helpers.file_handler import store_json_data, store_dict_data
-from public_companies.tase_api import TASE
+from public_companies.api.tase_api import TASE
 
 
 def save_to_file(tase_dict):

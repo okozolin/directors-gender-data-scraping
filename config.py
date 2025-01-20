@@ -29,8 +29,8 @@ if BASE_DIR is None:
     raise RuntimeError("Project root not found.")
 
 # Determine the base directory (project-root) based on this file's location
-PUBLIC_PATH = os.path.join(BASE_DIR, PUBLIC_DIR_NAME )
-DATA_PATH = os.path.join(PUBLIC_PATH, DATA_DIR_NAME )
+PUBLIC_PATH = os.path.join(BASE_DIR, PUBLIC_DIR_NAME)
+DATA_PATH = os.path.join(PUBLIC_PATH, DATA_DIR_NAME)
 
 # Construct the relative path to the 'output' folder
 COMPANIES_OUTPUT_PATH = os.path.join(DATA_PATH, COMPANIES_OUTPUT_DIR_NAME)

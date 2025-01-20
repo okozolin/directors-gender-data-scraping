@@ -2,12 +2,11 @@ __author__ = 'Orit Kozolin'
 
 import requests
 from config import TASE_API_KEY
+from public_companies.api.config_api import TASE_COMPANIES_URL
 
 
 class TASE(object):
     """Tel-Aviv Stock Exchange API requests"""
-
-    base_url = 'https://datawise.tase.co.il'
 
     def companies_list(self):
         """
@@ -15,13 +14,13 @@ class TASE(object):
         API returns: company Name, Sector, issuerID, corporateID
         method returns a dictionary {[companyName]:[ID]}
         """
-        url = self.base_url + "/v1/basic-securities/companies-list"
+
         headers = {
             'accept': "application/json",
             'accept-language': "he-IL",
             'apikey': TASE_API_KEY
         }
-        response = requests.get(url, headers=headers)
+        response = requests.get(TASE_COMPANIES_URL, headers=headers)
         output = response.json()
         tase_companies_dict = {"taseCompanies": []}
 
