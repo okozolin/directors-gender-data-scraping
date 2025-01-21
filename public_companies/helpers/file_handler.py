@@ -1,5 +1,10 @@
 import json
+import os
 import pprint
+from typing import Union
+
+from config import JSON_OUTPUT_FILE, PY_OUTPUT_FILE
+
 
 def store_json_data(dict_data, file_name):
     """writes data to JSON file"""
@@ -7,7 +12,7 @@ def store_json_data(dict_data, file_name):
         json.dump(dict_data, json_file)
 
 
-def dict_to_file(data_dict, file_name):
+def store_dict_data(data_dict, file_name: Union[str, bytes]) -> None:
     """
     Save a dictionary to a Python file as a variable named 'companies_dict'.
 
@@ -29,4 +34,16 @@ def dict_to_file(data_dict, file_name):
     except Exception as e:
         print(f"An error occurred: {e}")
 
+def save_to_file(tase_dict, file_path):
+    # Ensure the output directory exists
+    os.makedirs(file_path, exist_ok=True)
+
+    # Define the file path for the file to be saved
+    json_file_path = os.path.join(file_path, JSON_OUTPUT_FILE)
+    py_file_path = os.path.join(file_path, PY_OUTPUT_FILE)
+
+    store_json_data(tase_dict, json_file_path)
+    store_dict_data(tase_dict, py_file_path)
+
+    print(f"Created files: '{json_file_path}', and '{py_file_path}'")
 

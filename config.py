@@ -14,6 +14,7 @@ PY_OUTPUT_FILE = 'api_output.py'
 PUBLIC_DIR_NAME = 'public_companies'
 DATA_DIR_NAME = 'data'
 COMPANIES_OUTPUT_DIR_NAME = 'companies_api_output'
+DIRECTORS_OUTPUT_DIR_NAME = 'directors_api_output'
 
 # Function to get the project root directory
 def get_project_root():
@@ -34,5 +35,6 @@ DATA_PATH = os.path.join(PUBLIC_PATH, DATA_DIR_NAME)
 
 # Construct the relative path to the 'output' folder
 COMPANIES_OUTPUT_PATH = os.path.join(DATA_PATH, COMPANIES_OUTPUT_DIR_NAME)
+DIRECTORS_OUTPUT_PATH = os.path.join(DATA_PATH, DIRECTORS_OUTPUT_DIR_NAME)
 
 
